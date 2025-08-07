@@ -2,12 +2,15 @@ import { useState } from 'react';
 import { Send, Settings, Calendar, ChevronRight, ChevronLeft } from 'lucide-react';
 import { sendToOpenAI } from './api/openai';
 import './App.css';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function App() {
   const [message, setMessage] = useState('');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [chatLog, setChatLog] = useState([]);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -60,9 +63,14 @@ export default function App() {
             <a href="#" className="nav-item">
               <ChevronRight size={12} />
             </a>
-            <a href="#" className="nav-item">
+            <a
+              className="nav-item"
+              onClick={() => navigate('/calendar')}
+              style={{ cursor: 'pointer' }} >
               <Calendar size={24} />
             </a>
+
+
             <a href="#" className="nav-item">
               <Settings size={24} />
             </a>

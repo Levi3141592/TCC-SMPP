@@ -18,6 +18,24 @@ body {
   background-color: #000;
   color: #fff;
 }
+/* WebKit (Chrome, Edge, Brave, Opera) */
+::-webkit-scrollbar {
+  width: 8px;              /* Largura vertical */
+  height: 8px;             /* Altura horizontal */
+}
+
+::-webkit-scrollbar-track {
+  background: #111;        /* Fundo do track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;        /* "Botão" da barra */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;        /* Cor ao passar o mouse */
+}
 
 /* Mobile menu button */
 .mobile-menu-button {
